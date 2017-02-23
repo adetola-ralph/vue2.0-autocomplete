@@ -53,7 +53,7 @@ export default {
   	methods: {
   		itemClick(data) {
   			this.$emit('list-select', data);
-  			this.clear();
+  			// this.clear();
   		},
   		getData: debounce(function(e) {
   			this.inputField = e.target.value.trim();

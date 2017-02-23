@@ -6,4 +6,9 @@ new Vue({
 	components: {
 		autocomplete
 	},
+	methods: {
+		listAlert(data) {
+			console.log(data);
+		}
+	}
 })
