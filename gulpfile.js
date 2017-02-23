@@ -21,4 +21,4 @@ gulp.task('watch', function () {
   gulp.watch(['./**/*.vue', ' ./**/*.js', '!./node_modules'], ['browserify']);
 });
 
-gulp.task('default', ['browserify', 'watch']);
+gulp.task('default', ['watch']);
