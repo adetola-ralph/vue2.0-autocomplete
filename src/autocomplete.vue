@@ -64,7 +64,6 @@ export default {
 		        const url = `${this.url}${this.inputField}`;
 		        axios.get(url).then((result) => {
 		          this.datalist = result.data;
-		          console.log(result.data.length);
 		        }).catch((error) => {
 		          this.$emit('error-message', error);
 		        });
