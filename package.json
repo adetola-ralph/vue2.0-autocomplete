@@ -1,10 +1,9 @@
 {
-  "name": "json2.0-autocomplete",
+  "name": "vue2.0-autocomplete",
   "version": "0.0.1",
   "description": "autocomplete component for vue.js 2.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "vue",
@@ -12,7 +11,7 @@
     "2.0",
     "component"
   ],
-  "author": " <AdetolaRaphael>",
+  "author": " Oreofe Olutola",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
