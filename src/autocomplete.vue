@@ -53,7 +53,8 @@ export default {
   	methods: {
   		itemClick(data) {
   			this.$emit('list-select', data);
-  			// this.clear();
+  			this.clear();
+  			this.inputField = '';
   		},
   		getData: debounce(function(e) {
   			this.inputField = e.target.value.trim();
@@ -73,7 +74,7 @@ export default {
   		}, 350),
   		clear() {
   			setTimeout(() => {
-		        this.inputField = '';
+		        // this.inputField = '';
 		        this.showList = false;
 		        this.datalist = [];
 	      	}, 350);
@@ -82,5 +83,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+	$grey1: #fbfbfb;
+	$grey2: #efefef;
+
+	.autodata-list {
+	  	font-family: sans-serif;
+	  	font-size: 13px;
+	  	list-style-type: none;
+	  	background-color: $grey1;
+	  	padding-left: 0;
+	  	position: absolute;
+	  	z-index: 10;
+	  	.autodata-list-item {
+		    padding: 5px;
+		    border-bottom: 1px solid $grey2;
+	  	}
+	}
 </style>
