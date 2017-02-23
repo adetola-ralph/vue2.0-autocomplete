@@ -1,0 +1,17 @@
+{
+  "name": "json2.0-autocomplete",
+  "version": "0.0.1",
+  "description": "autocomplete component for vue.js 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "autocomplete",
+    "2.0",
+    "component"
+  ],
+  "author": " <AdetolaRaphael>",
+  "license": "ISC"
+}
