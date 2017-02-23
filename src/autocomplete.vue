@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<input :type="type" :value="inputField" @input="getData" @focusout="clearInput" :class="inputclass">
+	<div class"autocomplete-container">
+		<input :type="type" :value="inputField" @input="getData" @focusout="clear" :class="inputclass">
 		  <ul id="autodata" class="autodata-list" v-if="datalist.length > 0 && showList" :class="dropdownclass">
 		    <template v-for="data in datalist">
 		      <li @click="itemClick(data)" class="autodata-list-item" :key="data[key]" :class="dropdownitemclass">
@@ -53,22 +53,33 @@ export default {
   	methods: {
   		itemClick(data) {
   			$emit('list-select', data);
+  			this.clear();
   		},
   		getData: debounce((e) => {
   			this.inputField = e.target.value.trim();
+  			this.showList = true;
   			
   			if (this.inputField.length > 0) {
 		        const url = `${this.url}${this.inputField}`;
 		        axios.get(url).then((result) => {
 		          this.users = result.data;
 		        }).catch((error) => {
-		          this.errorMessage = error.respose || error.message;
+		          this.$emit('error-message', error);
 		        });
 	      	} else {
-	        	this.showList = false;
-	        	this.datalist = [];
+	        	this.clear();
 	      	}
-  		}, 350);
+  		}, 350),
+  		clear() {
+  			setTimeout(() => {
+		        this.inputField = '';
+		        this.showList = false;
+		        this.datalist = [];
+	      	}, 350);
+  		}
   	}
 }
 </script>
+
+<style>
+</style>
