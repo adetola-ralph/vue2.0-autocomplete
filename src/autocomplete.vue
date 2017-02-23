@@ -1,15 +1,15 @@
 <template>
-	<div class"autocomplete-container">
+	<div class="autocomplete-container">
 		<input :type="type" :value="inputField" @input="getData" @focusout="clear" :class="inputclass">
-		  <ul id="autodata" class="autodata-list" v-if="datalist.length > 0 && showList" :class="dropdownclass">
+  		<ul id="autodata" class="autodata-list" v-if="datalist.length > 0 && showList" :class="dropdownclass">
 		    <template v-for="data in datalist">
-		      <li @click="itemClick(data)" class="autodata-list-item" :key="data[key]" :class="dropdownitemclass">
-		        <span>
-		          {{data[label]}}
-		        </span>
-		      </li>
+		      	<li @click="itemClick(data)" class="autodata-list-item" :key="data[datakey]" :class="dropdownitemclass">
+		        	<span>
+	          			{{data[label]}}
+		        	</span>
+		      	</li>
 		    </template>
-		  </ul>
+	  	</ul>
 	</div>
 </template>
 
@@ -42,27 +42,28 @@ export default {
 	    	type: String,
 	    	required: true,
 	    },
-	    key: {
+	    datakey: {
 	    	type: String,
 	    	required: true,
 	    },
-	    inputclass,
-	    dropdownclass,
-	    dropdownitemclass
+	    inputclass: String,
+	    dropdownclass: String,
+	    dropdownitemclass: String
 	  },
   	methods: {
   		itemClick(data) {
-  			$emit('list-select', data);
+  			this.$emit('list-select', data);
   			this.clear();
   		},
-  		getData: debounce((e) => {
+  		getData: debounce(function(e) {
   			this.inputField = e.target.value.trim();
   			this.showList = true;
   			
   			if (this.inputField.length > 0) {
 		        const url = `${this.url}${this.inputField}`;
 		        axios.get(url).then((result) => {
-		          this.users = result.data;
+		          this.datalist = result.data;
+		          console.log(result.data.length);
 		        }).catch((error) => {
 		          this.$emit('error-message', error);
 		        });
