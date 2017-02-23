@@ -11,6 +11,14 @@
     "2.0",
     "component"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-oolutola/vue2.0-autocomplete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andela-oolutola/vue2.0-autocomplete/issues"
+  },
+  "homepage": "https://github.com/andela-oolutola/vue2.0-autocomplete#readme",
   "author": " Oreofe Olutola",
   "license": "ISC",
   "devDependencies": {
