@@ -95,6 +95,7 @@ export default {
 	  	position: absolute;
 	  	z-index: 10;
 	  	.autodata-list-item {
+	  		cursor: pointer;
 		    padding: 5px;
 		    border-bottom: 1px solid $grey2;
 	  	}
