@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "autocomplete component for vue.js 2.0",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "vue",
     "autocomplete",
@@ -27,7 +26,6 @@
     "browserify": "^14.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-shell": "^0.6.1",
     "lodash.debounce": "^4.0.8",
     "vueify": "^9.4.0"
   },
