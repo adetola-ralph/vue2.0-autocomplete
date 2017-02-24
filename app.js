@@ -7,9 +7,12 @@ new Vue({
 	components: {
 		autocomplete
 	},
+	data: {
+		receivedData: {}
+	},
 	methods: {
 		listAlert(data) {
-			console.log(data);
+			this.receivedData = data;
 		}
 	}
 })
