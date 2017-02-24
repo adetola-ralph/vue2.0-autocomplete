@@ -17,8 +17,10 @@ gulp.task('browserify', function () {
         .pipe(fs.createWriteStream('./bundle/bundle.js'));
 });
 
+gulp.task
+
 gulp.task('watch', function () {
-  gulp.watch(['./**/*.vue', ' ./**/*.js', '!./node_modules'], ['browserify']);
+  gulp.watch(['./src/*.vue', ' ./app.js', '!./node_modules'], ['browserify']);
 });
 
 gulp.task('default', ['watch']);
